@@ -12,10 +12,10 @@
         
         <!-- Test accounts info -->
         <div class="alert alert-info mb-3" role="alert">
-          <strong>Test Accounts:</strong><br>
+          <strong>Test Accounts (Server):</strong><br>
           • user1@example.com / password1<br>
-          • user2@example.com / password2<br>
-          • admin@example.com / admin123
+          • admin@example.com / admin123<br>
+          • user2@example.com / password2
         </div>
 
         <form (ngSubmit)="onLogin()" #loginForm="ngForm">
@@ -29,6 +29,7 @@
               name="email"
               placeholder="Enter your email"
               required
+              [disabled]="isLoading"
             />
           </div>
           <div class="mb-3">
@@ -41,11 +42,17 @@
               name="password"
               placeholder="Enter your password"
               required
+              [disabled]="isLoading"
             />
           </div>
           <div class="d-grid">
-            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">
-              Login
+            <button 
+              type="submit" 
+              class="btn btn-primary" 
+              [disabled]="!loginForm.form.valid || isLoading"
+            >
+              <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+              {{ isLoading ? 'Logging in...' : 'Login' }}
             </button>
           </div>
         </form>
