@@ -10,16 +10,25 @@ ng new week4 --routing=true --style=css --ssr=false
 ```
 
 ### 2. Install dependencies
+
+#### Frontend Dependencies
 ```bash
 cd week4
 npm install bootstrap --save
 ```
 
-### 3. Generate new components
+#### Backend Dependencies
+```bash
+cd server
+npm install express cors nodemon
+```
+
+### 3. Generate Angular services and components
 ```bash
 ng generate component home
 ng generate component login
 ng generate component profile
+ng generate service services/auth
 ```
 
 ### 4. Serve the application
@@ -29,21 +38,65 @@ ng serve
 
 ## Development server
 
-To start a local development server, run:
+### Frontend (Angular)
+To start the Angular development server, run:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+### Backend (Node.js)
+To start the backend server, run:
+
+```bash
+cd server
+npm start
+# or
+node server.js
+```
+
+The backend server will run on `http://localhost:3000/` with API endpoint at `/api/auth`.
+
+### Running Both Servers
+1. Start backend server first:
+   ```bash
+   cd server
+   npm start
+   ```
+
+2. In a new terminal, start frontend:
+   ```bash
+   ng serve
+   ```
+
+3. Open browser to `http://localhost:4200/`
 
 ## Features
 
+### Week 4 Features
 - **Navigation**: Bootstrap navbar with routing between Home, Login, and Account pages
 - **Home Page**: Welcome page with Bootstrap styling
 - **Login Page**: Login form with email/password inputs, two-way data binding, and authentication
 - **Profile Page**: User profile page with image and information cards
 - **Authentication**: Hardcoded user validation with error handling and redirection
+
+### Week 5 Features (Fullstack)
+- **Backend Server**: Node.js Express server with authentication API
+- **Server-side Authentication**: RESTful API endpoint `/api/auth` for user login
+- **CORS Support**: Cross-origin resource sharing for frontend-backend communication
+- **Profile Management**: Editable user profile with save/reset functionality
+- **Session Management**: localStorage integration for persistent login state
+- **Logout Functionality**: Complete logout with session cleanup
+- **Error Handling**: Comprehensive error handling for server communication
+
+## Architecture
+
+- **Frontend**: Angular (TypeScript) with Bootstrap styling
+- **Backend**: Node.js with Express.js framework
+- **API**: RESTful API with JSON data exchange
+- **Authentication**: Server-side validation with client-side session storage
 
 ## Test Accounts
 
