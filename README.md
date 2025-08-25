@@ -1,6 +1,31 @@
-# Week4
+# 3813ICT Week 4 Tutorial - Angular Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+
+## Commands Used
+
+### 1. Create the app
+```bash
+ng new week4 --routing=true --style=css --ssr=false
+```
+
+### 2. Install dependencies
+```bash
+cd week4
+npm install bootstrap --save
+```
+
+### 3. Generate new components
+```bash
+ng generate component home
+ng generate component login
+ng generate component profile
+```
+
+### 4. Serve the application
+```bash
+ng serve
+```
 
 ## Development server
 
@@ -12,19 +37,19 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Navigation**: Bootstrap navbar with routing between Home, Login, and Account pages
+- **Home Page**: Welcome page with Bootstrap styling
+- **Login Page**: Login form with email/password inputs, two-way data binding, and authentication
+- **Profile Page**: User profile page with image and information cards
+- **Authentication**: Hardcoded user validation with error handling and redirection
 
-```bash
-ng generate component component-name
-```
+## Test Accounts
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
+- user1@example.com / password1
+- user2@example.com / password2  
+- admin@example.com / admin123
 
 ## Building
 
@@ -44,15 +69,15 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
-## Running end-to-end tests
+## Git Commands Used
 
-For end-to-end (e2e) testing, run:
-
+### Setup Git repository
 ```bash
-ng e2e
+git remote add origin https://github.com/truongcongtuesy/3813ICT-week4.git
+git add .
+git commit -m "Week 4 Tutorial"
+git push -u origin master
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
 ## Additional Resources
 
